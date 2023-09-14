@@ -69,10 +69,11 @@ const StyledTab = styled((props: StyledTabProps) => (
     },
 }));
 interface NavbarProps {
-    information: InformationProps;
+    information: InformationProps,
+    matchesmd: boolean
 }
 
-const Navbar: React.FC<NavbarProps> = ({ information }) => {
+const Navbar: React.FC<NavbarProps> = ({ information, matchesmd }) => {
     const [mobileOpen, setMobileOpen] = useState<boolean>(false);
     const [offset, setOffset] = useState<number>(0)
     const [heroPosition, setHeroPosition] = useState<number>(0)
@@ -135,7 +136,7 @@ const Navbar: React.FC<NavbarProps> = ({ information }) => {
                         aria-label="open drawer"
                         edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
+                        sx={{ mr: 2, display: { sm: 'none' }, color: "#ffffff" }}
                     >
                         <MenuIcon />
                     </IconButton>

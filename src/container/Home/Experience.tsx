@@ -2,15 +2,16 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 
 //component
-import { TechnicalskillsProps } from '../../App'
+import { ExperienceProps } from '../../App'
 
-interface TechnicalSkillsProps {
-    information: TechnicalskillsProps[];
+interface ExperiencesProps {
+    information: ExperienceProps[],
+    matchesmd: boolean
 }
 
-const Experience = () => {
+const Experience: React.FC<ExperiencesProps> = ({ information, matchesmd }) => {
     return (
-        <div className="bgcom container" id="experience">
+        <div className="bgleft container" id="experience">
 
         </div>
     );

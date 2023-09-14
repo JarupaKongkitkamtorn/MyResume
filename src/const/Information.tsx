@@ -201,7 +201,7 @@ export const information = {
     ],
     experience: [
         {
-            time: "Jun 2018 - Present",
+            dateTime: "Jun 2018 - Present",
             company: "Biosci(Thailand) Co., Ltd.",
             role: "Intermediate Front-end Developer",
             description: "My main role is to create attractive and user-friendly websites. I'm skilled in HTML, CSS,and JavaScript, which helps me turn design ideas into functional web pages. I also usemodern tools like React and Next.js to build interactive interfaces. I prioritize webaccessibility to ensure everyone can use the sites I create. Collaboration with designersand back-end developers is crucial to ensure a seamless website experience. With myattention to detail and problem-solving abilities, I'm a valuable addition to anydevelopment team, dedicated to crafting engaging web designs."

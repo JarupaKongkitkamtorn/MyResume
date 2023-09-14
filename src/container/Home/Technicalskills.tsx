@@ -8,17 +8,18 @@ import { TechnicalskillsProps } from '../../App'
 
 
 interface TechnicalSkillsProps {
-    information: TechnicalskillsProps[];
+    information: TechnicalskillsProps[],
+    matchesmd: boolean
 }
 
-const Technicalskills: React.FC<TechnicalSkillsProps> = ({ information }) => {
+const Technicalskills: React.FC<TechnicalSkillsProps> = ({ information, matchesmd }) => {
     const [offset, setOffset] = useState<number>(0)
     const [heroPosition, setHeroPosition] = useState<number>(0)
     useEffect(() => {
         document.addEventListener("scroll", trackScrolling, { passive: true })
         const hero_section = document.getElementById("technical-skills")
         if (hero_section) {
-            setHeroPosition(hero_section.offsetTop)
+            setHeroPosition(hero_section.offsetTop / 2)
         }
         return () => {
             window.removeEventListener("scroll", trackScrolling)
@@ -30,7 +31,7 @@ const Technicalskills: React.FC<TechnicalSkillsProps> = ({ information }) => {
         setOffset(getOffset)
         const hero_section = document.getElementById("technical-skills")
         if (hero_section) {
-            setHeroPosition(hero_section.offsetTop)
+            setHeroPosition(hero_section.offsetTop / 2)
         }
     }
     const renderItem = (item: TechnicalskillsProps, key: number) => {
@@ -40,12 +41,12 @@ const Technicalskills: React.FC<TechnicalSkillsProps> = ({ information }) => {
                 style={{ transformOrigin: '0 0 0' }}
                 {...(offset >= heroPosition ? { timeout: key * 500 } : {})}
             >
-                <Grid key={key} item container lg={12} md={12} className='item' justifyContent="center" alignItems="center">
-                    <Grid item lg={12} md={12} className='center'>
-                        <img src={item.icon} alt='iconSkills' width="40px" height="auto" />
-                    </Grid>
-                    <Grid item lg={12} md={12} className='center'>
-                        <div className='textwhite'>{item.label}</div>
+                <Grid key={key} container className='item' justifyContent="center" alignItems="center">
+                    <Grid item container lg={12} md={12} className='center'>
+                        <Grid item lg={12} md={12} className='center'>
+                            <img src={item.icon} alt='iconSkills' width="40px" height="auto" />
+                            <div style={{ color: "#ffffff" }}>{item.label}</div>
+                        </Grid>
                     </Grid>
                 </Grid >
             </Grow>
@@ -57,8 +58,8 @@ const Technicalskills: React.FC<TechnicalSkillsProps> = ({ information }) => {
             <Grid container justifyContent="center" alignItems="center">
                 <Grid item lg={12} md={12} className='animate__animated animate__fadeInUp'>
                     <Paper elevation={12} className='technical-skills-paper' >
-                        <Grid container spacing={4} justifyContent="center" alignItems="center">
-                            <Grid item lg={12} md={12} className='role'>
+                        <Grid container spacing={matchesmd ? 3 : 4} justifyContent="center" alignItems="center">
+                            <Grid item lg={12} md={12} className='header'>
                                 <div>Technical Skills</div>
                             </Grid>
                             {information.map((item: TechnicalskillsProps, key: number) => renderItem(item, key))}

@@ -8,25 +8,26 @@ import { handleScroll } from '../../function/smooth'
 import { InformationProps } from '../../App'
 
 interface HerosectionProps {
-    information: InformationProps;
+    information: InformationProps,
+    matchesmd: boolean
 }
 
-const Herosection: React.FC<HerosectionProps> = ({ information }) => {
+const Herosection: React.FC<HerosectionProps> = ({ information, matchesmd }) => {
     return (
-        <div className="bghero" id="herosection">
-            <video className='videoTag' autoPlay loop muted>
+        <div className={matchesmd ? "bgleft" : "bghero"} id="herosection">
+            {!matchesmd && <video className='videoTag' autoPlay loop muted>
                 <source src={bghero} type='video/mp4' />
-            </video>
+            </video>}
             <Grid className='container' container sx={{ position: "absolute", top: 0, left: 0, height: "100vh" }} justifyContent="center" alignItems="center">
-                <Grid container item lg={12} md={12} justifyContent="center" alignItems="center" sx={{ paddingTop: "18vh" }}>
+                <Grid container item lg={12} md={12} justifyContent="center" alignItems="center" sx={{ paddingTop: { lg: "13%", xs: "27%" } }}>
                     <Grid container item lg={7} md={12} className='animate__animated animate__fadeInUp'>
                         <Grid item lg={12} md={12} className="typewriter">
                             <h1>{information.welcome}</h1>
                         </Grid>
-                        <Grid item lg={12} md={12} className='role'>
-                            <div>{information.role}</div>
+                        <Grid container item lg={12} md={12} className='role' justifyContent="center">
+                            <div style={{ width: "100%" }}>{information.role}</div>
                         </Grid>
-                        <Grid item lg={12} md={12} className='personality'>
+                        <Grid container item lg={12} md={12} className='personality' justifyContent="center">
                             <div>{information.personality}</div>
                         </Grid>
                     </Grid>
