@@ -524,3 +524,9 @@ button {
   }
 
 }
+
+@media screen and (min-width: 1900px) {
+  .bghero {
+    height: 114vh;
+  }
+}
