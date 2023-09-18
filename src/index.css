@@ -11,6 +11,7 @@ code {
 a,
 a:-webkit-any-link {
   text-decoration: none;
+  color: #ffffff;
 }
 
 a:hover {
@@ -19,9 +20,32 @@ a:hover {
   cursor: pointer;
 }
 
-.flex-center {
+.iconcontactme {
+  padding: 0px 8px !important;
+  font-size: 50px !important;
+  color: #ffffff !important;
+}
+
+.iconcontactme:hover {
+  padding: 0px 8px !important;
+  font-size: 50px !important;
+  color: #635ee7 !important;
+}
+
+.flex-between {
   display: flex !important;
   justify-content: space-between;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-left {
+  display: flex !important;
   align-items: center;
 }
 
@@ -67,11 +91,28 @@ button {
   height: 119vh;
 }
 
+.fab {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
 .bgcom {
   flex-grow: 1;
   min-height: 100vh;
-  background-repeat: no-repeat;
   background-image: url("./image/bgcom.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.bg {
+  flex-grow: 1;
+  background-repeat: no-repeat;
+  background-image: url("./image/bg.png");
   background-size: cover;
   background-position: center;
 }
@@ -84,6 +125,8 @@ button {
   background-image: url("./image/bgleft.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .bgright {
@@ -93,37 +136,71 @@ button {
   background-image: url("./image/bgright.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.divider {
+  font-size: 1.125rem !important;
+  width: 100%;
+  color: #ffffff;
+  margin-bottom: 16px !important;
+  font-weight: 600 !important;
+}
+
+.divider::before,
+.divider::after {
+  width: 100%;
+  border-top: thin solid #ffffff !important;
 }
 
 .personality {
   padding: 8px;
-  font-size: 0.875rem;
-  text-align: center;
-  font-family: 'Roboto Mono', monospace !important;
-  color: #ffffff !important;
-  font-weight: 300 !important;
 }
 
 .role {
   padding: 8px 0px;
-  font-size: 1.5rem;
+}
+
+.logo {
+  font-size: 1.25rem !important;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.header {
+  font-size: 1.5rem !important;
   text-align: center;
   font-family: 'Roboto Mono', monospace !important;
   color: #ffffff !important;
   font-weight: 300 !important;
 }
 
-.header {
-  font-size: 1.5rem;
-  text-align: center;
-  font-family: 'Roboto Mono', monospace !important;
+.titlehead {
+  font-size: 1.125rem !important;
   color: #ffffff !important;
-  font-weight: 300 !important;
+  margin-bottom: 8px !important;
+  letter-spacing: 0.02857em !important;
+  font-weight: 600 !important;
+}
+
+.title {
+  font-size: 1rem !important;
+  color: #ffffff !important;
+  margin-bottom: 8px !important;
+  letter-spacing: 0.02857em !important;
+  font-weight: 500 !important;
+}
+
+.description {
+  font-size: 0.875rem !important;
+  color: #ffffff !important;
+  margin-bottom: 8px !important;
+  letter-spacing: 0.02857em !important;
 }
 
 .typewriter {
   padding: 0px 10%;
-
 }
 
 .typewriter h1 {
@@ -216,6 +293,7 @@ button {
 
 
 .chevron {
+  font-family: "Roboto" !important;
   position: absolute;
   width: 28px;
   height: 8px;
@@ -297,17 +375,16 @@ button {
 
 .technical-skills-paper {
   width: 80vw;
-  margin: 8% 0px;
   padding: 45px;
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-.center {
-  text-align: center;
+.paddingtopbottom {
+  padding: 8% 0px;
 }
 
-.item {
-  cursor: pointer;
+.center {
+  text-align: center;
 }
 
 .item:hover {
@@ -388,6 +465,30 @@ button {
   }
 }
 
+.fade-in {
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 
 
 @media screen and (max-width: 850px) {
@@ -407,6 +508,10 @@ button {
   .technical-skills-paper {
     margin: 18% 0px;
     padding: 45px;
+  }
+
+  .paddingtopbottom {
+    padding: 18% 0px;
   }
 
   .img-wrap {

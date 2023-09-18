@@ -8,11 +8,7 @@ export const navbarData = [
         label: "Experience"
     },
     {
-        id: "project-reference",
-        label: "Project Reference"
-    },
-    {
-        id: "education",
-        label: "Education"
+        id: "aboutme",
+        label: "About Me"
     }
 ]

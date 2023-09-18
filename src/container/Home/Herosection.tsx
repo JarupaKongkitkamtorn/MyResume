@@ -4,12 +4,12 @@ import Grid from '@mui/material/Grid';
 //component
 import bghero from '../../image/bghero.mp4';
 import userimage from '../../image/userimage.jpg'
-import { handleScroll } from '../../function/smooth'
 import { InformationProps } from '../../App'
+import Scroll from '../../component/Scroll'
 
 interface HerosectionProps {
     information: InformationProps,
-    matchesmd: boolean
+    matchesmd: boolean,
 }
 
 const Herosection: React.FC<HerosectionProps> = ({ information, matchesmd }) => {
@@ -24,10 +24,10 @@ const Herosection: React.FC<HerosectionProps> = ({ information, matchesmd }) => 
                         <Grid item lg={12} md={12} className="typewriter">
                             <h1>{information.welcome}</h1>
                         </Grid>
-                        <Grid container item lg={12} md={12} className='role' justifyContent="center">
+                        <Grid container item lg={12} md={12} className='role header' justifyContent="center">
                             <div style={{ width: "100%" }}>{information.role}</div>
                         </Grid>
-                        <Grid container item lg={12} md={12} className='personality' justifyContent="center">
+                        <Grid container item lg={12} md={12} className='personality description' justifyContent="center">
                             <div>{information.personality}</div>
                         </Grid>
                     </Grid>
@@ -36,12 +36,7 @@ const Herosection: React.FC<HerosectionProps> = ({ information, matchesmd }) => 
                     </Grid>
                 </Grid>
                 <Grid container item lg={12} md={12} id="hero_section" justifyContent="center" alignItems="center">
-                    <div style={{ cursor: "pointer" }} onClick={() => handleScroll({ id: "technical-skills" })}>
-                        <div className="chevron"></div>
-                        <div className="chevron"></div>
-                        <div className="chevron"></div>
-                        <span className="textscroll">Scroll down</span>
-                    </div>
+                    <Scroll id="technical-skills" />
                 </Grid>
             </Grid>
         </div>

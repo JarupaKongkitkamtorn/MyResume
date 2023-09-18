@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Grow from '@mui/material/Grow';
+import Typography from '@mui/material/Typography';
 
 //component
 import { TechnicalskillsProps } from '../../App'
@@ -9,18 +10,14 @@ import { TechnicalskillsProps } from '../../App'
 
 interface TechnicalSkillsProps {
     information: TechnicalskillsProps[],
-    matchesmd: boolean
+    matchesmd: boolean,
 }
 
 const Technicalskills: React.FC<TechnicalSkillsProps> = ({ information, matchesmd }) => {
     const [offset, setOffset] = useState<number>(0)
-    const [heroPosition, setHeroPosition] = useState<number>(0)
+    const [section, setSection] = useState<number>(0)
     useEffect(() => {
         document.addEventListener("scroll", trackScrolling, { passive: true })
-        const hero_section = document.getElementById("technical-skills")
-        if (hero_section) {
-            setHeroPosition(hero_section.offsetTop / 2)
-        }
         return () => {
             window.removeEventListener("scroll", trackScrolling)
         }
@@ -29,23 +26,23 @@ const Technicalskills: React.FC<TechnicalSkillsProps> = ({ information, matchesm
     const trackScrolling = () => {
         const getOffset = document.body.scrollTop || document.documentElement.scrollTop
         setOffset(getOffset)
-        const hero_section = document.getElementById("technical-skills")
-        if (hero_section) {
-            setHeroPosition(hero_section.offsetTop / 2)
+        const sections = document.getElementById("technical-skills")
+        if (sections) {
+            setSection(sections.offsetTop / 2)
         }
     }
     const renderItem = (item: TechnicalskillsProps, key: number) => {
-        return <Grid item lg={2} md={12}>
+        return <Grid item lg={2} md={12} key={key}>
             <Grow
-                in={offset >= heroPosition}
+                in={offset >= section}
                 style={{ transformOrigin: '0 0 0' }}
-                {...(offset >= heroPosition ? { timeout: key * 500 } : {})}
+                {...(offset >= section ? { timeout: !key ? 500 : key * 500 } : {})}
             >
-                <Grid key={key} container className='item' justifyContent="center" alignItems="center">
+                <Grid container className='item' justifyContent="center" alignItems="center">
                     <Grid item container lg={12} md={12} className='center'>
                         <Grid item lg={12} md={12} className='center'>
                             <img src={item.icon} alt='iconSkills' width="40px" height="auto" />
-                            <div style={{ color: "#ffffff" }}>{item.label}</div>
+                            <Typography className='description' style={{ color: "#ffffff" }}>{item.label}</Typography>
                         </Grid>
                     </Grid>
                 </Grid >
@@ -55,7 +52,7 @@ const Technicalskills: React.FC<TechnicalSkillsProps> = ({ information, matchesm
     }
     return (
         <div className="bgcom container" id="technical-skills">
-            <Grid container justifyContent="center" alignItems="center">
+            <Grid container justifyContent="center" alignItems="center" className='paddingtopbottom'>
                 <Grid item lg={12} md={12} className='animate__animated animate__fadeInUp'>
                     <Paper elevation={12} className='technical-skills-paper' >
                         <Grid container spacing={matchesmd ? 3 : 4} justifyContent="center" alignItems="center">

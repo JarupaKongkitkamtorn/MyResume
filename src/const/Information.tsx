@@ -23,6 +23,10 @@ import i18next from '../image/program/i18next.png';
 import apollo from '../image/program/apollo.png';
 import github from '../image/program/github.jpg';
 import gitlab from '../image/program/gitlab.png';
+import biosci from '../image/Biosci-logo.png';
+import vsni from '../image/project/Vsni logow.png';
+import farmtrust from '../image/project/Farmtrust_logo-03.png';
+import mma from '../image/project/MMA.png';
 
 export const information = {
     welcome: "Welcome to my identity.",
@@ -46,7 +50,7 @@ export const information = {
         "QCC Project Simplify System Design first runner-up from Dynamic Logistics Co., Ltd. 2017",
         "Start Up Thailand 2018 to the semi-final round, Project Chain_AID"
     ],
-    Training: [
+    training: [
         "Google Adwords 2017",
         "Start Up Thailand 2018",
         "AWS Public Sector Summit ASEAN – Singapore 2019"
@@ -149,62 +153,71 @@ export const information = {
             label: "gitlab"
         },
     ],
-    project: [
-        {
-            icon: "",
-            title: "VSNi Website",
-            description: "A company website",
-            tech: "Next.js, AWS (S3, SES - send an email, Cloudfront), Strapi (CMS)"
-        },
-        {
-            icon: "",
-            title: "Farm Trust Dashboard",
-            description: "It's a part of the Farm Trust application for administrators tomanage farmers and the data collected from the app. This includes further analysis of thedata, such as presenting it in easy-to-understand graphs and utilizing Google Maps forvisualization.",
-            tech: "React, Firebase, Apollo Client"
-        },
-        {
-            icon: "",
-            title: "Mix Model Academy",
-            description: "An easy-to-understand code generation system for statisticians toproduce code that can be integrated into the company's software to generate statisticalresults.",
-            tech: "React, AWS (Amplify, Appsync, S3, Cloudfront, Cognito, DynamoDB)"
-        },
-        {
-            icon: "",
-            title: "Mixed Model Academy Dashboard",
-            description: "It's a dashboard displaying raw data for the marketingteam to further analyze.",
-            tech: "React, AWS (Amplify, Appsync, S3, Cloudfront, Cognito, DynamoDB)"
-        },
-        {
-            icon: "",
-            title: "Animal Breeding Platform",
-            description: "A system that aids in analyzing data and managing animalbreeding to enhance the quality of animal breeds in terms of genetics.",
-            tech: "React, Django"
-        },
-        {
-            icon: "",
-            title: "Site Reference Generator",
-            description: "Generate a reference code system for activating the company'ssoftware.",
-            tech: "React, Auth0"
-        },
-        {
-            icon: "",
-            title: "VSNdigital Monitor Dashboard",
-            description: "A license management system for displaying variousinformation such as expiration and renewal.",
-            tech: "React"
-        },
-        {
-            icon: "",
-            title: "Account Dashboard",
-            description: "A customer dashboard for self-managing licenses, similar to a userprofile page.",
-            tech: "React, Auth0"
-        },
-    ],
     experience: [
         {
+            icon: biosci,
             dateTime: "Jun 2018 - Present",
             company: "Biosci(Thailand) Co., Ltd.",
             role: "Intermediate Front-end Developer",
-            description: "My main role is to create attractive and user-friendly websites. I'm skilled in HTML, CSS,and JavaScript, which helps me turn design ideas into functional web pages. I also usemodern tools like React and Next.js to build interactive interfaces. I prioritize webaccessibility to ensure everyone can use the sites I create. Collaboration with designersand back-end developers is crucial to ensure a seamless website experience. With myattention to detail and problem-solving abilities, I'm a valuable addition to anydevelopment team, dedicated to crafting engaging web designs."
+            description: "My main role is to create attractive and user-friendly websites. I'm skilled in HTML, CSS,and JavaScript, which helps me turn design ideas into functional web pages. I also usemodern tools like React and Next.js to build interactive interfaces. I prioritize webaccessibility to ensure everyone can use the sites I create. Collaboration with designersand back-end developers is crucial to ensure a seamless website experience. With myattention to detail and problem-solving abilities, I'm a valuable addition to anydevelopment team, dedicated to crafting engaging web designs.",
+            project: [
+                {
+                    icon: vsni,
+                    link: "https://vsni.co.uk/",
+                    title: "VSN International Website",
+                    description: "A company website",
+                    tech: "Next.js, AWS (S3, SES - send an email, Cloudfront), Strapi (CMS)"
+                },
+                {
+                    icon: farmtrust,
+                    link: "https://www.farm-trust.com/",
+                    title: "Farm Trust Dashboard",
+                    description: "It's a part of the Farm Trust application for administrators tomanage farmers and the data collected from the app. This includes further analysis of thedata, such as presenting it in easy-to-understand graphs and utilizing Google Maps forvisualization.",
+                    tech: "React, Firebase, Apollo Client"
+                },
+                {
+                    icon: mma,
+                    link: "https://www.mixedmodel.academy/",
+                    title: "Mix Model Academy",
+                    description: "An easy-to-understand code generation system for statisticians toproduce code that can be integrated into the company's software to generate statisticalresults.",
+                    tech: "React, AWS (Amplify, Appsync, S3, Cloudfront, Cognito, DynamoDB)"
+                },
+                {
+                    icon: "",
+                    link: "",
+                    title: "Mixed Model Academy Dashboard",
+                    description: "It's a dashboard displaying raw data for the marketingteam to further analyze.",
+                    tech: "React, AWS (Amplify, Appsync, S3, Cloudfront, Cognito, DynamoDB)"
+                },
+                {
+                    icon: "",
+                    link: "",
+                    title: "Animal Breeding Platform",
+                    description: "A system that aids in analyzing data and managing animalbreeding to enhance the quality of animal breeds in terms of genetics.",
+                    tech: "React, Django"
+                },
+                {
+                    icon: "",
+                    link: "",
+                    title: "Site Reference Generator",
+                    description: "Generate a reference code system for activating the company'ssoftware.",
+                    tech: "React, Auth0"
+                },
+                {
+                    icon: "",
+                    link: "",
+                    title: "VSNdigital Monitor Dashboard",
+                    description: "A license management system for displaying variousinformation such as expiration and renewal.",
+                    tech: "React"
+                },
+                {
+                    icon: "",
+                    link: "",
+                    title: "Account Dashboard",
+                    description: "A customer dashboard for self-managing licenses, similar to a userprofile page.",
+                    tech: "React, Auth0"
+                },
+            ]
         }
     ]
 }

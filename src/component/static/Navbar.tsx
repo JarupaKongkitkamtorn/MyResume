@@ -70,14 +70,14 @@ const StyledTab = styled((props: StyledTabProps) => (
 }));
 interface NavbarProps {
     information: InformationProps,
-    matchesmd: boolean
+    matchesmd: boolean,
 }
 
 const Navbar: React.FC<NavbarProps> = ({ information, matchesmd }) => {
     const [mobileOpen, setMobileOpen] = useState<boolean>(false);
     const [offset, setOffset] = useState<number>(0)
     const [heroPosition, setHeroPosition] = useState<number>(0)
-    const [value, setValue] = useState<number>(-1);
+    const [value, setValue] = useState<any>(false);
     useEffect(() => {
         document.addEventListener("scroll", trackScrolling, { passive: true })
         const hero_section = document.getElementById("hero_section")
@@ -92,10 +92,6 @@ const Navbar: React.FC<NavbarProps> = ({ information, matchesmd }) => {
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
-    const handleChangetoHerosection = () => {
-        setValue(-1)
-        handleScroll({ id: "herosection" })
-    }
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
@@ -109,7 +105,7 @@ const Navbar: React.FC<NavbarProps> = ({ information, matchesmd }) => {
         }
     }
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+        <Box onClick={handleDrawerToggle} >
             <Typography variant="h5" sx={{ my: 2 }}>
                 {information.name}
             </Typography>
@@ -140,12 +136,11 @@ const Navbar: React.FC<NavbarProps> = ({ information, matchesmd }) => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Container fixed className='flex-center'>
+                    <Container fixed className='flex-between'>
                         <Typography
-                            onClick={() => handleChangetoHerosection()}
-                            variant="h6"
-                            component="div"
-                            sx={{ display: { xs: 'none', sm: 'block' }, color: "#ffffff", cursor: 'pointer' }}
+                            className='logo'
+                            onClick={() => handleScroll("herosection")}
+                            sx={{ display: { xs: 'none', sm: 'block' } }}
                         >
                             {information.name}
                         </Typography>
@@ -156,9 +151,13 @@ const Navbar: React.FC<NavbarProps> = ({ information, matchesmd }) => {
                                     onChange={handleChange}
                                     aria-label="styled tabs example"
                                 >
-                                    {navbarData.map((item) => <StyledTab label={item.label} onClick={() => handleScroll({ id: item.id })} />)}
+                                    {navbarData.map((item, key) => <StyledTab key={key} label={item.label} onClick={() => handleScroll(item.id)} />)}
                                 </StyledTabs>
-                                <Button className='heartbeat' variant="filled">Contact Me</Button>
+                                <Button className='heartbeat' variant="filled"
+                                    onClick={() => {
+                                        handleScroll("contactMe")
+                                        setValue(false)
+                                    }}>Contact Me</Button>
                             </div>
                         </Box>
                     </Container>
@@ -170,7 +169,7 @@ const Navbar: React.FC<NavbarProps> = ({ information, matchesmd }) => {
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
                     ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
+                        keepMounted: true,
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },
