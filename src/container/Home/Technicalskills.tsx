@@ -18,6 +18,10 @@ const Technicalskills: React.FC<TechnicalSkillsProps> = ({ information, matchesm
     const [section, setSection] = useState<number>(0)
     useEffect(() => {
         document.addEventListener("scroll", trackScrolling, { passive: true })
+        const sections = document.getElementById("technical-skills")
+        if (sections) {
+            setSection(sections.offsetTop / 2)
+        }
         return () => {
             window.removeEventListener("scroll", trackScrolling)
         }

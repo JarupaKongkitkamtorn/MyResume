@@ -27,6 +27,10 @@ const Experience: React.FC<ExperiencesProps> = ({ information, matchesmd }) => {
     const [section, setSection] = useState<number>(0)
     useEffect(() => {
         document.addEventListener("scroll", trackScrolling, { passive: true })
+        const sections = document.getElementById("experience")
+        if (sections) {
+            setSection(sections.offsetTop / 2)
+        }
         return () => {
             window.removeEventListener("scroll", trackScrolling)
         }
@@ -45,7 +49,7 @@ const Experience: React.FC<ExperiencesProps> = ({ information, matchesmd }) => {
             key={key}
             in={offset >= section}
             style={{ transformOrigin: '0 0 0' }}
-            {...(offset >= section ? { timeout: !key ? 2000 : key * 2000 } : {})}
+            {...(offset >= section ? { timeout: !key ? 3000 : key * 3000 } : {})}
         >
             <TimelineItem>
                 <TimelineOppositeContent
