@@ -32,15 +32,15 @@ const Technicalskills: React.FC<TechnicalSkillsProps> = ({ information, matchesm
         }
     }
     const renderItem = (item: TechnicalskillsProps, key: number) => {
-        return <Grid item lg={2} md={12} key={key}>
+        return <Grid item lg={2} sm={3} key={key}>
             <Grow
                 in={offset >= section}
                 style={{ transformOrigin: '0 0 0' }}
                 {...(offset >= section ? { timeout: !key ? 500 : key * 500 } : {})}
             >
                 <Grid container className='item' justifyContent="center" alignItems="center">
-                    <Grid item container lg={12} md={12} className='center'>
-                        <Grid item lg={12} md={12} className='center'>
+                    <Grid item container lg={12} sm={12} className='center'>
+                        <Grid item lg={12} sm={12} className='center'>
                             <img src={item.icon} alt='iconSkills' width="40px" height="auto" />
                             <Typography className='description' style={{ color: "#ffffff" }}>{item.label}</Typography>
                         </Grid>
@@ -56,7 +56,7 @@ const Technicalskills: React.FC<TechnicalSkillsProps> = ({ information, matchesm
                 <Grid item lg={12} md={12} className='animate__animated animate__fadeInUp'>
                     <Paper elevation={12} className='technical-skills-paper' >
                         <Grid container spacing={matchesmd ? 3 : 4} justifyContent="center" alignItems="center">
-                            <Grid item lg={12} md={12} className='header'>
+                            <Grid item lg={12} sm={12} className='header'>
                                 <div>Technical Skills</div>
                             </Grid>
                             {information.map((item: TechnicalskillsProps, key: number) => renderItem(item, key))}

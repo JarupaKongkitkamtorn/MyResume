@@ -156,6 +156,7 @@ button {
 
 .personality {
   padding: 8px;
+  text-align: center;
 }
 
 .role {
@@ -498,7 +499,7 @@ button {
   }
 
   .role {
-    font-size: 1.125rem;
+    font-size: 1.125rem !important;
     text-align: center;
     padding: 0;
     padding-top: 8px;
@@ -519,7 +520,7 @@ button {
   }
 
   .header {
-    font-size: 1.125rem;
+    font-size: 1.2rem !important;
   }
 
 }

@@ -19,7 +19,7 @@ import { styled } from '@mui/material/styles';
 import Button from '@mui/material-next/Button';
 
 //component
-import { navbarData } from '../../const/Navbar'
+import { navbarData, navbarDataMobile } from '../../const/Navbar'
 import { handleScroll } from '../../function/smooth'
 import { InformationProps } from '../../App'
 
@@ -106,15 +106,15 @@ const Navbar: React.FC<NavbarProps> = ({ information, matchesmd }) => {
     }
     const drawer = (
         <Box onClick={handleDrawerToggle} >
-            <Typography variant="h5" sx={{ my: 2 }}>
+            <Typography variant="h6" sx={{ my: 2, textAlign: "center" }} onClick={() => handleScroll("herosection")}>
                 {information.name}
             </Typography>
             <Divider />
             <List>
-                {navbarData.map((item) => (
+                {navbarDataMobile.map((item) => (
                     <ListItem key={item.id} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item.label} />
+                            <ListItemText primary={item.label} onClick={() => handleScroll(item.id)} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -132,7 +132,7 @@ const Navbar: React.FC<NavbarProps> = ({ information, matchesmd }) => {
                         aria-label="open drawer"
                         edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' }, color: "#ffffff" }}
+                        sx={{ mr: 2, display: { md: 'none' }, color: "#ffffff" }}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -140,11 +140,11 @@ const Navbar: React.FC<NavbarProps> = ({ information, matchesmd }) => {
                         <Typography
                             className='logo'
                             onClick={() => handleScroll("herosection")}
-                            sx={{ display: { xs: 'none', sm: 'block' } }}
+                            sx={{ display: { xs: 'none', md: 'block' } }}
                         >
                             {information.name}
                         </Typography>
-                        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
                             <div className='flex-center'>
                                 <StyledTabs
                                     value={value}
@@ -172,7 +172,7 @@ const Navbar: React.FC<NavbarProps> = ({ information, matchesmd }) => {
                         keepMounted: true,
                     }}
                     sx={{
-                        display: { xs: 'block', sm: 'none' },
+                        display: { xs: 'block', md: 'none' },
                         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                     }}
                 >

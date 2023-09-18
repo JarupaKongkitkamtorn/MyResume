@@ -65,10 +65,10 @@ const Experience: React.FC<ExperiencesProps> = ({ information, matchesmd }) => {
                     <Typography className='titlehead'>{item.role}</Typography>
                     <Typography className='description'>{item.description}</Typography>
                     <Grid container>
-                        <Grid item lg={12} md={12}>
+                        <Grid item lg={12} sm={12}>
                             <Typography className='titlehead'>Projects</Typography>
                         </Grid>
-                        <Grid item lg={12} md={12}>
+                        <Grid item lg={12} sm={12}>
                             <ul>
                                 {item.project.map((itemproject: ProjectProps, key: number) => <li key={key}>
                                     <Typography className='title flex-left' >
@@ -92,22 +92,70 @@ const Experience: React.FC<ExperiencesProps> = ({ information, matchesmd }) => {
             </TimelineItem>
         </Grow>
     }
+    const renderItemmd = (item: ExperienceProps, key: number) => {
+        return <Grow
+            key={key}
+            in={offset >= section}
+            style={{ transformOrigin: '0 0 0' }}
+            {...(offset >= section ? { timeout: !key ? 2000 : key * 2000 } : {})}
+        >
+            <Grid container spacing={2} sx={{ mt: 1 }}>
+                <Grid item lg={12} sm={12}>
+                    <Typography className='description'>{item.dateTime}</Typography>
+                    <Typography className='title'>{item.company}</Typography>
+                    <Typography className='title'>{item.role}</Typography>
+                    <Typography className='description'>{item.description}</Typography>
+                </Grid>
+                <Grid item lg={12} sm={12}>
+                    <Typography className='titlehead' sx={{ marginBottom: "0px !important" }}>Projects</Typography>
+                </Grid>
+                <Grid item lg={12} sm={12}>
+                    <ul style={{ color: "#ffffff" }}>
+                        {item.project.map((itemproject: ProjectProps, key: number) => <li key={key}>
+                            <Typography className='title flex-left' >
+                                {itemproject.icon && !matchesmd && <img src={itemproject.icon} alt='projecticon' width="40px" style={{ marginRight: 8 }} />}
+                                {itemproject.title}
+                                {!matchesmd && <a href={itemproject.link} target='_blank' rel="noreferrer" style={{ color: "#8dc63f", marginLeft: 5 }}>
+                                    {itemproject.link}
+                                </a>}
+                            </Typography>
+                            {matchesmd && !!itemproject.link && <Typography className='description'>
+                                <a href={itemproject.link} target='_blank' rel="noreferrer" style={{ color: "#8dc63f", marginLeft: 5 }}>
+                                    {itemproject.link}
+                                </a>
+                            </Typography>}
+                            <Typography className='description'>{itemproject.description}</Typography>
+                            <ul>
+                                <li>
+                                    <Typography className='description'>{itemproject.tech}</Typography>
+                                </li>
+                            </ul>
+                        </li>)}
+                    </ul>
+                </Grid>
+            </Grid>
+
+        </Grow>
+    }
     return (
         <div className="bg container" id="experience">
             <Grid container className='paddingtopbottom' justifyContent="center" alignItems="center">
-                <Grid item lg={12} md={12} className='header'>
+                <Grid item lg={12} sm={12} className='header'>
                     <div>Experience</div>
                 </Grid>
-                <Grid item lg={12} md={12}>
-                    <Timeline
-                        sx={{
-                            [`& .${timelineOppositeContentClasses.root}`]: {
-                                flex: 0.2,
-                            },
-                        }}>
-                        {information.map((item: ExperienceProps, key: number) => renderItem(item, key))}
-                    </Timeline>
+                {matchesmd ? <Grid container item lg={12} sm={12} justifyContent="center" alignItems="center">
+                    {information.map((item: ExperienceProps, key: number) => renderItemmd(item, key))}
                 </Grid>
+                    : <Grid item lg={12} sm={12}>
+                        <Timeline
+                            sx={{
+                                [`& .${timelineOppositeContentClasses.root}`]: {
+                                    flex: 0.2,
+                                },
+                            }}>
+                            {information.map((item: ExperienceProps, key: number) => renderItem(item, key))}
+                        </Timeline>
+                    </Grid>}
             </Grid>
         </div>
     );

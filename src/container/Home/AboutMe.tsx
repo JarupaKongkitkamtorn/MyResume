@@ -16,20 +16,20 @@ const AboutMe: React.FC<AboutMeProps> = ({ information, matchesmd }) => {
         <div className="bgleft" id="aboutme">
             <div className="container" >
                 <Grid container className='paddingtopbottom' justifyContent="center" alignItems="center">
-                    <Grid item lg={12} md={12} className='animate__animated animate__fadeInUp'>
+                    <Grid item lg={12} sm={12} className='animate__animated animate__fadeInUp'>
                         <Paper elevation={12} className='technical-skills-paper' >
                             <Grid container spacing={matchesmd ? 3 : 4} justifyContent="center" alignItems="center">
-                                <Grid item lg={12} md={12} className='header'>
+                                <Grid item lg={12} sm={12} className='header'>
                                     <div>About Me</div>
                                 </Grid>
-                                <Grid item container lg={12} md={12} spacing={6} sx={{ color: "#ffffff" }}>
-                                    <Grid item lg={6} md={12}>
+                                <Grid item container lg={12} sm={12} spacing={6} sx={{ color: "#ffffff" }}>
+                                    <Grid item lg={6} sm={12}>
                                         <Divider className='divider'>Education</Divider>
                                         <Typography className='title'>{information.education.bachelor}</Typography>
                                         <Typography className='title'>{information.education.university}</Typography>
                                         <Typography className='description'>{information.education.gpa}</Typography>
                                     </Grid>
-                                    <Grid item lg={6} md={12}>
+                                    <Grid item lg={6} sm={12}>
                                         <Divider className='divider'>Training</Divider>
                                         <ul>
                                             {information.training.map((item: string, key: number) => <li key={key}>
@@ -38,7 +38,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ information, matchesmd }) => {
                                             )}
                                         </ul>
                                     </Grid>
-                                    <Grid item lg={6} md={12}>
+                                    <Grid item lg={6} sm={12}>
                                         <Divider className='divider'>Certification</Divider>
                                         <ul>
                                             {information.certification.map((item: string, key: number) => <li key={key}>

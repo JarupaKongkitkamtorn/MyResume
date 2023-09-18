@@ -17,7 +17,7 @@ const ContactMe: React.FC<ContactMeProps> = ({ information, matchesmd }) => {
     return (
         <div className="bg container" id="contactMe">
             <Grid container className='paddingtopbottom' justifyContent="center" alignItems="center">
-                <Grid item lg={12} md={12}>
+                <Grid item lg={12} sm={12}>
                     <Typography className='flex-center description'>
                         <EmailIcon sx={{ pr: 1 }} fontSize="large" />
                         <a href='mailto:jarupa.kongkitkamtorn@gmail.com' >
