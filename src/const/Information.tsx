@@ -39,7 +39,7 @@ export const information = {
     github: "https://github.com/JarupaKongkitkamtorn",
     education: {
         bachelor: "Bachelor of Science (Computer Science)",
-        university: "King Mongkut’s University of TechnologyNorth Bangkok",
+        university: "King Mongkut’s University of Technology North Bangkok",
         gpa: "GPA 3.13 (2014-2018)"
     },
     certification: [
