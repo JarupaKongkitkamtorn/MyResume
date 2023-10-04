@@ -101,6 +101,7 @@ button {
 
 .bgcom {
   flex-grow: 1;
+  margin-top: 10vh;
   background-image: url("./image/bgcom.jpg");
   background-position: center;
   background-size: cover;
