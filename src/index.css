@@ -102,6 +102,7 @@ button {
 .bgcom {
   flex-grow: 1;
   margin-top: 10vh;
+  min-height: 100vh;
   background-image: url("./image/bgcom.jpg");
   background-position: center;
   background-size: cover;
@@ -119,6 +120,7 @@ button {
 
 .bgleft {
   flex-grow: 1;
+  min-height: 100vh;
   background-repeat: no-repeat;
   background-image: url("./image/bgleft.png");
   background-size: cover;
@@ -129,6 +131,7 @@ button {
 
 .bgright {
   flex-grow: 1;
+  min-height: 100vh;
   background-repeat: no-repeat;
   background-image: url("./image/bgright.png");
   background-size: cover;
