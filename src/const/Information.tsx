@@ -167,7 +167,7 @@ export const information = {
           link: "https://vsni.co.uk/",
           title: "VSN International Website",
           description: "A company website",
-          tech: "Next.js, AWS (S3, SES - send an email, Cloudfront), Strapi (CMS)",
+          tech: "Next.js, Strapi (CMS), Apollo Client (GraphQL connect API), Cypress (E2E testing)",
         },
         {
           icon: farmtrust,
@@ -175,7 +175,7 @@ export const information = {
           title: "Farm Trust Dashboard",
           description:
             "It's a part of the Farm Trust application for administrators to manage farmers and the data collected from the app. This includes further analysis of the data, such as presenting it in easy-to-understand graphs and utilizing Google Maps for visualization.",
-          tech: "React, Firebase, Apollo Client",
+          tech: "React, Firebase (Authentication), Apollo Client (GraphQL connect API)",
         },
         {
           icon: mma,
@@ -183,7 +183,7 @@ export const information = {
           title: "Mix Model Academy",
           description:
             "An easy-to-understand code generation system for statisticians to produce code that can be integrated into the company's software to generate statisticalresults.",
-          tech: "React, AWS (Amplify, Appsync, S3, Cloudfront, Cognito, DynamoDB)",
+          tech: "React, AWS amplify (GraphQL connect API)",
         },
         {
           icon: "",
@@ -191,7 +191,7 @@ export const information = {
           title: "Mixed Model Academy Dashboard",
           description:
             "It's a dashboard displaying raw data for the marketing team to further analyze.",
-          tech: "React, AWS (Amplify, Appsync, S3, Cloudfront, Cognito, DynamoDB)",
+          tech: "React, AWS amplify (GraphQL connect API)",
         },
         {
           icon: "",
@@ -199,7 +199,7 @@ export const information = {
           title: "Animal Breeding Platform",
           description:
             "A system that aids in analyzing data and managing animal breeding to enhance the quality of animal breeds in terms of genetics.",
-          tech: "React, Django",
+          tech: "React",
         },
         {
           icon: "",
@@ -207,7 +207,7 @@ export const information = {
           title: "Site Reference Generator",
           description:
             "Generate a reference code system for activating the company's software.",
-          tech: "React, Auth0",
+          tech: "React, Auth0 (Authentication), Apollo Client (GraphQL connect API)",
         },
         {
           icon: "",
@@ -215,7 +215,7 @@ export const information = {
           title: "VSNdigital Monitor Dashboard",
           description:
             "A license management system for displaying various in ßformation such as expiration and renewal.",
-          tech: "React",
+          tech: "React, Apollo Client (GraphQL connect API)",
         },
         {
           icon: "",
@@ -223,7 +223,7 @@ export const information = {
           title: "Account Dashboard",
           description:
             "A customer dashboard for self-managing licenses, similar to a userprofile page.",
-          tech: "React, Auth0",
+          tech: "React, Auth0 (Authentication)",
         },
       ],
     },
